@@ -14,27 +14,18 @@ import AVFoundation
 class SoundGenerator  {
     
     var processingGraph:AUGraph
-    var samplerNode:AUNode
-    var ioNode:AUNode
     var samplerUnit:AudioUnit
-    var ioUnit:AudioUnit
-    var isPlaying:Bool
     var musicPlayer:MusicPlayer
     
     init() {
         self.processingGraph = AUGraph()
-        self.samplerNode = AUNode()
-        self.ioNode = AUNode()
         self.samplerUnit  = AudioUnit()
-        self.ioUnit  = AudioUnit()
-        self.isPlaying = false
         self.musicPlayer = nil
-        
         
         augraphSetup()
         graphStart()
         // after the graph starts
-        loadSF2Preset(1)
+        loadSF2Preset(0)
         
         var musicSequence = createMusicSequence()
         self.musicPlayer = createPlayer(musicSequence)
@@ -46,14 +37,14 @@ class SoundGenerator  {
     
     func augraphSetup() {
         var status : OSStatus = 0
-        status = NewAUGraph(&processingGraph)
+        status = NewAUGraph(&self.processingGraph)
         CheckError(status)
         
         // create the sampler
         
         //https://developer.apple.com/library/prerelease/ios/documentation/AudioUnit/Reference/AudioComponentServicesReference/index.html#//apple_ref/swift/struct/AudioComponentDescription
         
-        
+        var samplerNode = AUNode()
         var cd:AudioComponentDescription = AudioComponentDescription(
             componentType: OSType(kAudioUnitType_MusicDevice),
             componentSubType: OSType(kAudioUnitSubType_Sampler),
@@ -64,7 +55,7 @@ class SoundGenerator  {
         CheckError(status)
         
         // create the ionode
-        
+        var ioNode:AUNode = AUNode()
         var ioUnitDescription:AudioComponentDescription = AudioComponentDescription(
             componentType: OSType(kAudioUnitType_Output),
             componentSubType: OSType(kAudioUnitSubType_RemoteIO),
@@ -78,21 +69,20 @@ class SoundGenerator  {
         status = AUGraphOpen(self.processingGraph)
         CheckError(status)
         
-        status = AUGraphNodeInfo(self.processingGraph, self.samplerNode, nil, &samplerUnit)
+        status = AUGraphNodeInfo(self.processingGraph, samplerNode, nil, &self.samplerUnit)
         CheckError(status)
         
-        status = AUGraphNodeInfo(self.processingGraph, self.ioNode, nil, &ioUnit)
+        var ioUnit:AudioUnit  = AudioUnit()
+        status = AUGraphNodeInfo(self.processingGraph, ioNode, nil, &ioUnit)
         CheckError(status)
         
         var ioUnitOutputElement:AudioUnitElement = 0
         var samplerOutputElement:AudioUnitElement = 0
         status = AUGraphConnectNodeInput(self.processingGraph,
-            self.samplerNode, samplerOutputElement, // srcnode, inSourceOutputNumber
-            self.ioNode, ioUnitOutputElement) // destnode, inDestInputNumber
+            samplerNode, samplerOutputElement, // srcnode, inSourceOutputNumber
+            ioNode, ioUnitOutputElement) // destnode, inDestInputNumber
         CheckError(status)
     }
-    
-    
     
     
     func graphStart() {
@@ -116,7 +106,6 @@ class SoundGenerator  {
             CheckError(status)
         }
         
-        self.isPlaying = true;
     }
     
     func playNoteOn(noteNum:UInt32, velocity:UInt32)    {
@@ -173,7 +162,6 @@ class SoundGenerator  {
                 &instdata,
                 UInt32(sizeof(AUSamplerInstrumentData)))
             CheckError(status)
-            
         }
     }
     
@@ -198,6 +186,7 @@ class SoundGenerator  {
         case kAUGraphErr_InvalidAudioUnit:
             println( "Error:kAUGraphErr_InvalidAudioUnit \n");
             
+            // Core MIDI constants. Not using them here.
             //    case kMIDIInvalidClient :
             //        println( "kMIDIInvalidClient ");
             //

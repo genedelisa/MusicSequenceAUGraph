@@ -1,12 +1,12 @@
 # MusicSequenceAUGraph
 
-Attaching an AUGraph to a MusicSequence in Swift
+Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swift.
 
 
 ## Blog post for this example.
 
-[Blog post](http://www.rockhoppertech.com/blog/)
-coming soon
+[Blog post](http://www.rockhoppertech.com/blog/swift-augraph-and-musicsequence/)
+
 
 
 ## Bugs
