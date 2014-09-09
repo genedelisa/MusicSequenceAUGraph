@@ -13,8 +13,8 @@
 		B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06746E219BF58F700DCF4E3 /* Images.xcassets */; };
 		B06746EF19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */; };
 		B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746F819BF591200DCF4E3 /* SoundGenerator.swift */; };
-		B06746FB19BF591200DCF4E3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B06746F919BF591200DCF4E3 /* README.md */; };
 		B06746FD19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */; };
+		B06746FF19BF673300DCF4E3 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B06746FE19BF673300DCF4E3 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		B06746ED19BF58F700DCF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSequenceAUGraphTests.swift; sourceTree = "<group>"; };
 		B06746F819BF591200DCF4E3 /* SoundGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
-		B06746F919BF591200DCF4E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = MusicSequenceAUGraph/README.md; sourceTree = "<group>"; };
 		B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
+		B06746FE19BF673300DCF4E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				B06746FE19BF673300DCF4E3 /* README.md */,
 				B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */,
-				B06746F919BF591200DCF4E3 /* README.md */,
 				B06746D819BF58F700DCF4E3 /* MusicSequenceAUGraph */,
 				B06746EB19BF58F700DCF4E3 /* MusicSequenceAUGraphTests */,
 				B06746D719BF58F700DCF4E3 /* Products */,
@@ -220,7 +220,7 @@
 			files = (
 				B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */,
 				B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */,
-				B06746FB19BF591200DCF4E3 /* README.md in Sources */,
+				B06746FF19BF673300DCF4E3 /* README.md in Sources */,
 				B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
