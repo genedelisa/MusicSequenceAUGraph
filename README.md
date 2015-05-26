@@ -13,7 +13,7 @@ Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swi
 Let me know if you find any!
 
 ## SoundFont
-I reference a SoundFont in the code.
+I reference a SoundFont in the code (GeneralUser GS MuseScore v1.442.sf2).
 
 You can get the one I'm using from '[MuseCore](https://musescore.org/en/node/36171) or
 just use any other SoundFont you like.
