@@ -12,6 +12,12 @@ Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swi
 ## Bugs
 Let me know if you find any!
 
+## SoundFont
+I reference a SoundFont in the code.
+
+You can get the one I'm using from '[MuseCore](https://musescore.org/en/node/36171) or
+just use any other SoundFont you like.
+
 
 ### Buy my kitty Giacomo some cat food
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01161BE1B149C2A005A90F7 /* Launch Screen.xib */; };
 		B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */; };
 		B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DD19BF58F700DCF4E3 /* ViewController.swift */; };
 		B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06746DF19BF58F700DCF4E3 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B01161BE1B149C2A005A90F7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		B06746D619BF58F700DCF4E3 /* MusicSequenceAUGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSequenceAUGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06746DA19BF58F700DCF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				B01161BE1B149C2A005A90F7 /* Launch Screen.xib */,
 				B06746FE19BF673300DCF4E3 /* README.md */,
 				B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				B06746D819BF58F700DCF4E3 /* MusicSequenceAUGraph */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B06746FD19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
+				B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */,
 				B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */,
 				B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */,
 			);
