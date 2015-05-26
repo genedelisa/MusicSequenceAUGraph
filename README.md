@@ -24,6 +24,9 @@ just use any other SoundFont you like.
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=F5KE9Z29MH8YQ&bnP-DonationsBF:btn_donate_SM.gif:NonHosted)
 
 
+![Giacomo](https://www.flickr.com/photos/genedelisa/shares/s9oY9p "Giacomo Kitty")
+
+
 ## Licensing
 
 I'd appreciate an ack somehow.
