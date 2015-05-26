@@ -12,13 +12,18 @@ class ViewController: UIViewController {
 
     @IBOutlet var picker: UIPickerView!
     
+    @IBOutlet var loopSlider: UISlider!
+    
     var gen = SoundGenerator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
         picker.dataSource = self
-
+        
+        var len = gen.getTrackLength()
+        loopSlider.maximumValue = Float(len)
+        loopSlider.value = Float(len)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +33,16 @@ class ViewController: UIViewController {
 
     @IBAction func play(sender: AnyObject) {
         gen.play()
+    }
+    
+    @IBAction func stopPlaying(sender: AnyObject) {
+        gen.stop()
+    }
+    
+    @IBAction func loopSliderChanged(sender: AnyObject) {
+        println("slider vlaue \(loopSlider.value)")
+        gen.setTrackLoopDuration(loopSlider.value)
+        
     }
     
     var GMDict:[String:UInt8] = [
@@ -176,8 +191,9 @@ extension ViewController: UIPickerViewDataSource {
 }
 
 extension ViewController: UIPickerViewDelegate {
-    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
-        var u:UInt8 = UInt8(row)
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+
+        var u = UInt8(row)
         for (k,v) in GMDict {
             if v == UInt8(row) {
                 return k
@@ -185,8 +201,9 @@ extension ViewController: UIPickerViewDelegate {
         }
         return nil
     }
-    
-    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int) {
+
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
         gen.loadSF2Preset(UInt8(row))
     }
     
