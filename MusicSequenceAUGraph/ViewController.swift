@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         picker.delegate = self
         picker.dataSource = self
         
-        var len = gen.getTrackLength()
+        let len = gen.getTrackLength()
         loopSlider.maximumValue = Float(len)
         loopSlider.value = Float(len)
     }
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loopSliderChanged(sender: AnyObject) {
-        println("slider vlaue \(loopSlider.value)")
+        print("slider vlaue \(loopSlider.value)")
         gen.setTrackLoopDuration(loopSlider.value)
         
     }
@@ -191,9 +191,9 @@ extension ViewController: UIPickerViewDataSource {
 }
 
 extension ViewController: UIPickerViewDelegate {
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
-        var u = UInt8(row)
+        //var u = UInt8(row)
         for (k,v) in GMDict {
             if v == UInt8(row) {
                 return k

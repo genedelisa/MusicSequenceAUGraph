@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01161BE1B149C2A005A90F7 /* Launch Screen.xib */; };
+		B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4B1BACBE4C00A25C46 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		B04FEC4E1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */; settings = {ASSET_TAGS = (); }; };
+		B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4F1BACBF6D00A25C46 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */; };
 		B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DD19BF58F700DCF4E3 /* ViewController.swift */; };
 		B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06746DF19BF58F700DCF4E3 /* Main.storyboard */; };
 		B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06746E219BF58F700DCF4E3 /* Images.xcassets */; };
 		B06746EF19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */; };
 		B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746F819BF591200DCF4E3 /* SoundGenerator.swift */; };
-		B06746FD19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		B01161BE1B149C2A005A90F7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		B04FEC4B1BACBE4C00A25C46 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
+		B04FEC4F1BACBF6D00A25C46 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B06746D619BF58F700DCF4E3 /* MusicSequenceAUGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSequenceAUGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06746DA19BF58F700DCF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +44,6 @@
 		B06746ED19BF58F700DCF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSequenceAUGraphTests.swift; sourceTree = "<group>"; };
 		B06746F819BF591200DCF4E3 /* SoundGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
-		B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 		B06746FE19BF673300DCF4E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,9 +68,11 @@
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				B04FEC4F1BACBF6D00A25C46 /* LICENSE */,
+				B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */,
+				B04FEC4B1BACBE4C00A25C46 /* .gitignore */,
 				B01161BE1B149C2A005A90F7 /* Launch Screen.xib */,
 				B06746FE19BF673300DCF4E3 /* README.md */,
-				B06746FC19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				B06746D819BF58F700DCF4E3 /* MusicSequenceAUGraph */,
 				B06746EB19BF58F700DCF4E3 /* MusicSequenceAUGraphTests */,
 				B06746D719BF58F700DCF4E3 /* Products */,
@@ -164,7 +170,9 @@
 		B06746CE19BF58F700DCF4E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Gene De Lisa";
 				TargetAttributes = {
 					B06746D519BF58F700DCF4E3 = {
@@ -200,9 +208,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06746FD19BF5DF800DCF4E3 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
+				B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */,
+				B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */,
 				B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */,
 				B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */,
+				B04FEC4E1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +287,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -343,6 +354,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MusicSequenceAUGraph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockhoppertech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -354,6 +366,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MusicSequenceAUGraph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockhoppertech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -372,6 +385,7 @@
 				);
 				INFOPLIST_FILE = MusicSequenceAUGraphTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockhoppertech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicSequenceAUGraph.app/MusicSequenceAUGraph";
 			};
@@ -387,6 +401,7 @@
 				);
 				INFOPLIST_FILE = MusicSequenceAUGraphTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rockhoppertech.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicSequenceAUGraph.app/MusicSequenceAUGraph";
 			};

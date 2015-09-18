@@ -37,7 +37,7 @@ class SoundGenerator  {
     
     func getTrackLength() -> MusicTimeStamp {
         var track:MusicTrack = nil
-        var status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
+        let status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
         CheckError(status)
         return getTrackLength(track)
     }
@@ -84,8 +84,8 @@ class SoundGenerator  {
         status = AUGraphNodeInfo(self.processingGraph, ioNode, nil, &ioUnit)
         CheckError(status)
         
-        var ioUnitOutputElement = AudioUnitElement(0)
-        var samplerOutputElement = AudioUnitElement(0)
+        let ioUnitOutputElement = AudioUnitElement(0)
+        let samplerOutputElement = AudioUnitElement(0)
         status = AUGraphConnectNodeInput(self.processingGraph,
             samplerNode, samplerOutputElement, // srcnode, inSourceOutputNumber
             ioNode, ioUnitOutputElement) // destnode, inDestInputNumber
@@ -97,19 +97,19 @@ class SoundGenerator  {
         //https://developer.apple.com/library/prerelease/ios/documentation/AudioToolbox/Reference/AUGraphServicesReference/index.html#//apple_ref/c/func/AUGraphIsInitialized
         
         var status = OSStatus(noErr)
-        var outIsInitialized:Boolean = 0
+        var outIsInitialized:DarwinBoolean = false
         status = AUGraphIsInitialized(self.processingGraph, &outIsInitialized)
-        println("isinit status is \(status)")
-        println("bool is \(outIsInitialized)")
-        if outIsInitialized == 0 {
+        print("isinit status is \(status)")
+        print("bool is \(outIsInitialized)")
+        if outIsInitialized == false {
             status = AUGraphInitialize(self.processingGraph)
             CheckError(status)
         }
         
-        var isRunning = Boolean(0)
+        var isRunning = DarwinBoolean(false)
         AUGraphIsRunning(self.processingGraph, &isRunning)
-        println("running bool is \(isRunning)")
-        if isRunning == 0 {
+        print("running bool is \(isRunning)")
+        if isRunning == false {
             status = AUGraphStart(self.processingGraph)
             CheckError(status)
         }
@@ -118,19 +118,19 @@ class SoundGenerator  {
     
     func playNoteOn(noteNum:UInt32, velocity:UInt32)    {
         // or with channel. channel is 0 in this example
-        var noteCommand = UInt32(0x90 | 0)
+        let noteCommand = UInt32(0x90 | 0)
         var status  = OSStatus(noErr)
         status = MusicDeviceMIDIEvent(self.samplerUnit, noteCommand, noteNum, velocity, 0)
         CheckError(status)
-        println("noteon status is \(status)")
+        print("noteon status is \(status)")
     }
     
     func playNoteOff(noteNum:UInt32)    {
-        var noteCommand = UInt32(0x80 | 0)
+        let noteCommand = UInt32(0x80 | 0)
         var status : OSStatus = OSStatus(noErr)
         status = MusicDeviceMIDIEvent(self.samplerUnit, noteCommand, noteNum, 0, 0)
         CheckError(status)
-        println("noteoff status is \(status)")
+        print("noteoff status is \(status)")
     }
     
     
@@ -145,7 +145,7 @@ class SoundGenerator  {
                 presetID: preset)
             
             
-            var status = AudioUnitSetProperty(
+            let status = AudioUnitSetProperty(
                 self.samplerUnit,
                 AudioUnitPropertyID(kAUSamplerProperty_LoadInstrument),
                 AudioUnitScope(kAudioUnitScope_Global),
@@ -164,7 +164,7 @@ class SoundGenerator  {
                 bankMSB: UInt8(kAUSampler_DefaultMelodicBankMSB),
                 bankLSB: UInt8(kAUSampler_DefaultBankLSB),
                 presetID: pn)
-            var status = AudioUnitSetProperty(
+            let status = AudioUnitSetProperty(
                 self.samplerUnit,
                 UInt32(kAUSamplerProperty_LoadInstrument),
                 UInt32(kAudioUnitScope_Global),
@@ -182,22 +182,22 @@ class SoundGenerator  {
     func CheckError(error:OSStatus) {
         if error == 0 {return}
         
-        switch(Int(error)) {
+        switch(error) {
             // AudioToolbox
         case kAUGraphErr_NodeNotFound:
-            println("Error:kAUGraphErr_NodeNotFound \n");
+            print("Error:kAUGraphErr_NodeNotFound \n");
             
         case kAUGraphErr_OutputNodeErr:
-            println( "Error:kAUGraphErr_OutputNodeErr \n");
+            print( "Error:kAUGraphErr_OutputNodeErr \n");
             
         case kAUGraphErr_InvalidConnection:
-            println("Error:kAUGraphErr_InvalidConnection \n");
+            print("Error:kAUGraphErr_InvalidConnection \n");
             
         case kAUGraphErr_CannotDoInCurrentContext:
-            println( "Error:kAUGraphErr_CannotDoInCurrentContext \n");
+            print( "Error:kAUGraphErr_CannotDoInCurrentContext \n");
             
         case kAUGraphErr_InvalidAudioUnit:
-            println( "Error:kAUGraphErr_InvalidAudioUnit \n");
+            print( "Error:kAUGraphErr_InvalidAudioUnit \n");
             
             // Core MIDI constants. Not using them here.
             //    case kMIDIInvalidClient :
@@ -257,82 +257,82 @@ class SoundGenerator  {
             
             
         case kAudioToolboxErr_InvalidSequenceType :
-            println( " kAudioToolboxErr_InvalidSequenceType ");
+            print( " kAudioToolboxErr_InvalidSequenceType ");
             
         case kAudioToolboxErr_TrackIndexError :
-            println( " kAudioToolboxErr_TrackIndexError ");
+            print( " kAudioToolboxErr_TrackIndexError ");
             
         case kAudioToolboxErr_TrackNotFound :
-            println( " kAudioToolboxErr_TrackNotFound ");
+            print( " kAudioToolboxErr_TrackNotFound ");
             
         case kAudioToolboxErr_EndOfTrack :
-            println( " kAudioToolboxErr_EndOfTrack ");
+            print( " kAudioToolboxErr_EndOfTrack ");
             
         case kAudioToolboxErr_StartOfTrack :
-            println( " kAudioToolboxErr_StartOfTrack ");
+            print( " kAudioToolboxErr_StartOfTrack ");
             
         case kAudioToolboxErr_IllegalTrackDestination	:
-            println( " kAudioToolboxErr_IllegalTrackDestination");
+            print( " kAudioToolboxErr_IllegalTrackDestination");
             
         case kAudioToolboxErr_NoSequence 		:
-            println( " kAudioToolboxErr_NoSequence ");
+            print( " kAudioToolboxErr_NoSequence ");
             
         case kAudioToolboxErr_InvalidEventType		:
-            println( " kAudioToolboxErr_InvalidEventType");
+            print( " kAudioToolboxErr_InvalidEventType");
             
         case kAudioToolboxErr_InvalidPlayerState	:
-            println( " kAudioToolboxErr_InvalidPlayerState");
+            print( " kAudioToolboxErr_InvalidPlayerState");
             
         case kAudioUnitErr_InvalidProperty		:
-            println( " kAudioUnitErr_InvalidProperty");
+            print( " kAudioUnitErr_InvalidProperty");
             
         case kAudioUnitErr_InvalidParameter		:
-            println( " kAudioUnitErr_InvalidParameter");
+            print( " kAudioUnitErr_InvalidParameter");
             
         case kAudioUnitErr_InvalidElement		:
-            println( " kAudioUnitErr_InvalidElement");
+            print( " kAudioUnitErr_InvalidElement");
             
         case kAudioUnitErr_NoConnection			:
-            println( " kAudioUnitErr_NoConnection");
+            print( " kAudioUnitErr_NoConnection");
             
         case kAudioUnitErr_FailedInitialization		:
-            println( " kAudioUnitErr_FailedInitialization");
+            print( " kAudioUnitErr_FailedInitialization");
             
         case kAudioUnitErr_TooManyFramesToProcess	:
-            println( " kAudioUnitErr_TooManyFramesToProcess");
+            print( " kAudioUnitErr_TooManyFramesToProcess");
             
         case kAudioUnitErr_InvalidFile			:
-            println( " kAudioUnitErr_InvalidFile");
+            print( " kAudioUnitErr_InvalidFile");
             
         case kAudioUnitErr_FormatNotSupported		:
-            println( " kAudioUnitErr_FormatNotSupported");
+            print( " kAudioUnitErr_FormatNotSupported");
             
         case kAudioUnitErr_Uninitialized		:
-            println( " kAudioUnitErr_Uninitialized");
+            print( " kAudioUnitErr_Uninitialized");
             
         case kAudioUnitErr_InvalidScope			:
-            println( " kAudioUnitErr_InvalidScope");
+            print( " kAudioUnitErr_InvalidScope");
             
         case kAudioUnitErr_PropertyNotWritable		:
-            println( " kAudioUnitErr_PropertyNotWritable");
+            print( " kAudioUnitErr_PropertyNotWritable");
             
         case kAudioUnitErr_InvalidPropertyValue		:
-            println( " kAudioUnitErr_InvalidPropertyValue");
+            print( " kAudioUnitErr_InvalidPropertyValue");
             
         case kAudioUnitErr_PropertyNotInUse		:
-            println( " kAudioUnitErr_PropertyNotInUse");
+            print( " kAudioUnitErr_PropertyNotInUse");
             
         case kAudioUnitErr_Initialized			:
-            println( " kAudioUnitErr_Initialized");
+            print( " kAudioUnitErr_Initialized");
             
         case kAudioUnitErr_InvalidOfflineRender		:
-            println( " kAudioUnitErr_InvalidOfflineRender");
+            print( " kAudioUnitErr_InvalidOfflineRender");
             
         case kAudioUnitErr_Unauthorized			:
-            println( " kAudioUnitErr_Unauthorized");
+            print( " kAudioUnitErr_Unauthorized");
             
         default:
-            println("huh?")
+            print("huh?")
         }
     }
     
@@ -342,7 +342,7 @@ class SoundGenerator  {
         var musicSequence = MusicSequence()
         var status = NewMusicSequence(&musicSequence)
         if status != OSStatus(noErr) {
-            println("\(__LINE__) bad status \(status) creating sequence")
+            print("\(__LINE__) bad status \(status) creating sequence")
             CheckError(status)
         }
         
@@ -350,7 +350,7 @@ class SoundGenerator  {
         var track = MusicTrack()
         status = MusicSequenceNewTrack(musicSequence, &track)
         if status != OSStatus(noErr) {
-            println("error creating track \(status)")
+            print("error creating track \(status)")
             CheckError(status)
         }
         
@@ -382,17 +382,17 @@ class SoundGenerator  {
         var status = OSStatus(noErr)
         status = NewMusicPlayer(&musicPlayer)
         if status != OSStatus(noErr) {
-            println("bad status \(status) creating player")
+            print("bad status \(status) creating player")
             CheckError(status)
         }
         status = MusicPlayerSetSequence(musicPlayer, musicSequence)
         if status != OSStatus(noErr) {
-            println("setting sequence \(status)")
+            print("setting sequence \(status)")
             CheckError(status)
         }
         status = MusicPlayerPreroll(musicPlayer)
         if status != OSStatus(noErr) {
-            println("prerolling player \(status)")
+            print("prerolling player \(status)")
             CheckError(status)
         }
         return musicPlayer
@@ -401,30 +401,30 @@ class SoundGenerator  {
     // called fron the button's action
     func play() {
         var status = OSStatus(noErr)
-        var playing = Boolean(0)
+        var playing = DarwinBoolean(false)
         status = MusicPlayerIsPlaying(musicPlayer, &playing)
-        if playing != 0 {
-            println("music player is playing. stopping")
+        if playing != false {
+            print("music player is playing. stopping")
             status = MusicPlayerStop(musicPlayer)
             if status != OSStatus(noErr) {
-                println("Error stopping \(status)")
+                print("Error stopping \(status)")
                 CheckError(status)
                 return
             }
         } else {
-            println("music player is not playing.")
+            print("music player is not playing.")
         }
         
         status = MusicPlayerSetTime(musicPlayer, 0)
         if status != OSStatus(noErr) {
-            println("setting time \(status)")
+            print("setting time \(status)")
             CheckError(status)
             return
         }
         
         status = MusicPlayerStart(musicPlayer)
         if status != OSStatus(noErr) {
-            println("Error starting \(status)")
+            print("Error starting \(status)")
             CheckError(status)
             return
         }
@@ -434,7 +434,7 @@ class SoundGenerator  {
          var status = OSStatus(noErr)
         status = MusicPlayerStop(musicPlayer)
         if status != OSStatus(noErr) {
-            println("Error stopping \(status)")
+            print("Error stopping \(status)")
             CheckError(status)
             return
         }
@@ -445,23 +445,23 @@ class SoundGenerator  {
         //The time of the last music event in a music track, plus time required for note fade-outs and so on.
         var trackLength = MusicTimeStamp(0)
         var tracklengthSize = UInt32(0)
-        var status = MusicTrackGetProperty(musicTrack,
+        let status = MusicTrackGetProperty(musicTrack,
             UInt32(kSequenceTrackProperty_TrackLength),
             &trackLength,
             &tracklengthSize)
         if status != OSStatus(noErr) {
-            println("Error getting track length \(status)")
+            print("Error getting track length \(status)")
             CheckError(status)
             return 0
         }
-        println("track length is \(trackLength)")
+        print("track length is \(trackLength)")
         return trackLength
     }
     
     func loopTrack(musicTrack:MusicTrack)   {
 
-        var trackLength = getTrackLength(musicTrack)
-        println("track length is \(trackLength)")
+        let trackLength = getTrackLength(musicTrack)
+        print("track length is \(trackLength)")
         setTrackLoopDuration(musicTrack, duration: trackLength)
     
 //        status = MusicTrackGetProperty(musicTrack, UInt32(kSequenceTrackProperty_LoopInfo), &loopInfo, &lisize )
@@ -485,21 +485,21 @@ To turn looping off, you set this with loop length equal to zero.
     
     func setTrackLoopDuration(duration:Float)   {
         var track:MusicTrack = nil
-        var status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
+        let status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
         CheckError(status)
         setTrackLoopDuration(track, duration: MusicTimeStamp(duration))
     }
 
 
     func setTrackLoopDuration(musicTrack:MusicTrack, duration:MusicTimeStamp)   {
-        println("loop duration to \(duration)")
+        print("loop duration to \(duration)")
         
         //To loop forever, set numberOfLoops to 0. To explicitly turn off looping, specify a loopDuration of 0.
         var loopInfo = MusicTrackLoopInfo(loopDuration: duration, numberOfLoops: 0)
-        var lisize = UInt32(0)
-        var status = MusicTrackSetProperty(musicTrack, UInt32(kSequenceTrackProperty_LoopInfo), &loopInfo, lisize )
+        let lisize = UInt32(0)
+        let status = MusicTrackSetProperty(musicTrack, UInt32(kSequenceTrackProperty_LoopInfo), &loopInfo, lisize )
         if status != OSStatus(noErr) {
-            println("Error setting loopinfo on track \(status)")
+            print("Error setting loopinfo on track \(status)")
             CheckError(status)
             return
         }
