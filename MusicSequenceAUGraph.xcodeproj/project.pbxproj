@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01161BE1B149C2A005A90F7 /* Launch Screen.xib */; };
 		B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4B1BACBE4C00A25C46 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
-		B04FEC4E1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */; settings = {ASSET_TAGS = (); }; };
 		B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4F1BACBF6D00A25C46 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */; };
 		B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DD19BF58F700DCF4E3 /* ViewController.swift */; };
@@ -17,6 +16,7 @@
 		B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06746E219BF58F700DCF4E3 /* Images.xcassets */; };
 		B06746EF19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */; };
 		B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746F819BF591200DCF4E3 /* SoundGenerator.swift */; };
+		B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0F870781BAD9A5200C38A19 /* .travis.yml */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,6 @@
 /* Begin PBXFileReference section */
 		B01161BE1B149C2A005A90F7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		B04FEC4B1BACBE4C00A25C46 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 		B04FEC4F1BACBF6D00A25C46 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B06746D619BF58F700DCF4E3 /* MusicSequenceAUGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSequenceAUGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06746DA19BF58F700DCF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSequenceAUGraphTests.swift; sourceTree = "<group>"; };
 		B06746F819BF591200DCF4E3 /* SoundGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
 		B06746FE19BF673300DCF4E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B0F870781BAD9A5200C38A19 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +68,8 @@
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				B0F870781BAD9A5200C38A19 /* .travis.yml */,
 				B04FEC4F1BACBF6D00A25C46 /* LICENSE */,
-				B04FEC4D1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				B04FEC4B1BACBE4C00A25C46 /* .gitignore */,
 				B01161BE1B149C2A005A90F7 /* Launch Screen.xib */,
 				B06746FE19BF673300DCF4E3 /* README.md */,
@@ -212,7 +212,7 @@
 				B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */,
 				B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */,
 				B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */,
-				B04FEC4E1BACBEA800A25C46 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
+				B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */,
 				B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

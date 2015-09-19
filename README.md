@@ -1,9 +1,7 @@
 # MusicSequenceAUGraph
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://en.wikipedia.org/wiki/MIT_License)
-<!--
- [![Build Status](https://travis-ci.org/genedelisa/MusicSequenceAUGraph.svg)](https://travis-ci.org/genedelisa/MusicSequenceAUGraph)
- -->
-[![GitHub tag](https://img.shields.io/github/tag/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/)
+[![Build Status](https://travis-ci.org/genedelisa/MusicSequenceAUGraph.svg)](https://travis-ci.org/genedelisa/MusicSequenceAUGraph)
+ [![GitHub tag](https://img.shields.io/github/tag/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/)
 [![GitHub release](https://img.shields.io/github/release/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/)
 
 Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swift.
@@ -33,6 +31,8 @@ If you find one, [please add it to issues](https://github.com/genedelisa/MusicSe
 
 
 ### Buy my kitty Giacomo some cat food
+
+If this project is of any use to you, my ravenous Maine Coon kitty would like a snack.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=F5KE9Z29MH8YQ&bnP-DonationsBF:btn_donate_SM.gif:NonHosted)
 

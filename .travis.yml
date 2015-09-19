@@ -1,0 +1,22 @@
+# file: .travis.yml
+language: objective-c
+
+before_install:
+- brew update
+- brew outdated xctool || brew upgrade xctool
+- gem install xcpretty -N
+
+
+script:
+
+# - xctool -project MusicSequenceAUGraph.xcodeproj -scheme "MusicSequenceAUGraph" -sdk iphoneos -configuration Debug -PBXBuildsContinueAfterErrors=0 test | xcpretty -c
+
+#- xctool -project MusicSequenceAUGraph.xcodeproj -scheme "MusicSequenceAUGraph" -sdk iphoneos9.0 -configuration Debug -destination "platform=OS X" -PBXBuildsContinueAfterErrors=0 test | xcpretty -c
+
+- xctool clean build -project MusicSequenceAUGraph.xcodeproj -scheme MusicSequenceAUGraph  | xcpretty -c
+- xctool test -project MusicSequenceAUGraph.xcodeproj -scheme MusicSequenceAUGraphTests  | xcpretty -c
+
+
+# http://docs.travis-ci.com/user/languages/objective-c/
+
+
