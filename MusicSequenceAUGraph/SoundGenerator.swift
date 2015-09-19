@@ -25,8 +25,10 @@ class SoundGenerator  {
         
         augraphSetup()
         graphStart()
+
         // after the graph starts
         loadSF2Preset(0)
+        //or loadDLSPreset(0)
         
         self.musicSequence = createMusicSequence()
         self.musicPlayer = createPlayer(musicSequence)
@@ -107,9 +109,10 @@ class SoundGenerator  {
         }
         
         var isRunning = DarwinBoolean(false)
-        AUGraphIsRunning(self.processingGraph, &isRunning)
-        print("running bool is \(isRunning)")
+        status = AUGraphIsRunning(self.processingGraph, &isRunning)
+        print("running bool is \(isRunning) status \(status)")
         if isRunning == false {
+            print("graph is not running, starting now")
             status = AUGraphStart(self.processingGraph)
             CheckError(status)
         }
@@ -137,42 +140,46 @@ class SoundGenerator  {
     /// loads preset into self.samplerUnit
     func loadSF2Preset(preset:UInt8)  {
         
-        if let bankURL = NSBundle.mainBundle().URLForResource("GeneralUser GS MuseScore v1.442", withExtension: "sf2") {
-            var instdata = AUSamplerInstrumentData(fileURL: Unmanaged.passUnretained(bankURL),
-                instrumentType: UInt8(kInstrumentType_DLSPreset),
-                bankMSB: UInt8(kAUSampler_DefaultMelodicBankMSB),
-                bankLSB: UInt8(kAUSampler_DefaultBankLSB),
-                presetID: preset)
-            
-            
-            let status = AudioUnitSetProperty(
-                self.samplerUnit,
-                AudioUnitPropertyID(kAUSamplerProperty_LoadInstrument),
-                AudioUnitScope(kAudioUnitScope_Global),
-                0,
-                &instdata,
-                UInt32(sizeof(AUSamplerInstrumentData)))
-            CheckError(status)
+        guard let bankURL = NSBundle.mainBundle().URLForResource("GeneralUser GS MuseScore v1.442", withExtension: "sf2") else {
+            fatalError("\"GeneralUser GS MuseScore v1.442.sf2\" file not found.")
         }
+        
+        var instdata = AUSamplerInstrumentData(fileURL: Unmanaged.passUnretained(bankURL),
+            instrumentType: UInt8(kInstrumentType_SF2Preset),
+            bankMSB: UInt8(kAUSampler_DefaultMelodicBankMSB),
+            bankLSB: UInt8(kAUSampler_DefaultBankLSB),
+            presetID: preset)
+        
+        let status = AudioUnitSetProperty(
+            self.samplerUnit,
+            AudioUnitPropertyID(kAUSamplerProperty_LoadInstrument),
+            AudioUnitScope(kAudioUnitScope_Global),
+            0,
+            &instdata,
+            UInt32(sizeof(AUSamplerInstrumentData)))
+        CheckError(status)
     }
     
     
     func loadDLSPreset(pn:UInt8) {
-        if let bankURL = NSBundle.mainBundle().URLForResource("gs_instruments", withExtension: "dls") {
-            var instdata = AUSamplerInstrumentData(fileURL: Unmanaged.passUnretained(bankURL),
-                instrumentType: UInt8(kInstrumentType_DLSPreset),
-                bankMSB: UInt8(kAUSampler_DefaultMelodicBankMSB),
-                bankLSB: UInt8(kAUSampler_DefaultBankLSB),
-                presetID: pn)
-            let status = AudioUnitSetProperty(
-                self.samplerUnit,
-                UInt32(kAUSamplerProperty_LoadInstrument),
-                UInt32(kAudioUnitScope_Global),
-                0,
-                &instdata,
-                UInt32(sizeof(AUSamplerInstrumentData)))
-            CheckError(status)
+        
+        guard let bankURL = NSBundle.mainBundle().URLForResource("gs_instruments", withExtension: "dls") else {
+            fatalError("\"gs_instruments.dls\" file not found.")
         }
+        
+        var instdata = AUSamplerInstrumentData(fileURL: Unmanaged.passUnretained(bankURL),
+            instrumentType: UInt8(kInstrumentType_DLSPreset),
+            bankMSB: UInt8(kAUSampler_DefaultMelodicBankMSB),
+            bankLSB: UInt8(kAUSampler_DefaultBankLSB),
+            presetID: pn)
+        let status = AudioUnitSetProperty(
+            self.samplerUnit,
+            UInt32(kAUSamplerProperty_LoadInstrument),
+            UInt32(kAudioUnitScope_Global),
+            0,
+            &instdata,
+            UInt32(sizeof(AUSamplerInstrumentData)))
+        CheckError(status)
     }
     
     /**

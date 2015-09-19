@@ -17,6 +17,7 @@
 		B06746EF19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */; };
 		B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746F819BF591200DCF4E3 /* SoundGenerator.swift */; };
 		B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0F870781BAD9A5200C38A19 /* .travis.yml */; settings = {ASSET_TAGS = (); }; };
+		B0F8707B1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B06746F819BF591200DCF4E3 /* SoundGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundGenerator.swift; sourceTree = "<group>"; };
 		B06746FE19BF673300DCF4E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B0F870781BAD9A5200C38A19 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				B0F870781BAD9A5200C38A19 /* .travis.yml */,
 				B04FEC4F1BACBF6D00A25C46 /* LICENSE */,
 				B04FEC4B1BACBE4C00A25C46 /* .gitignore */,
@@ -213,6 +216,7 @@
 				B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */,
 				B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */,
 				B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */,
+				B0F8707B1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
