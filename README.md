@@ -4,6 +4,16 @@
  [![GitHub tag](https://img.shields.io/github/tag/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/)
 [![GitHub release](https://img.shields.io/github/release/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/)
 
+
+[![Swift 2](https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat")](https://developer.apple.com/swift)
+
+[![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://swift.org/)
+
+[![Sponsors](https://img.shields.io/badge/Sponsors-Rockhopper%20Technologies-orange.svg?style=flat)](http://www.rockhoppertech.com/)
+[![Twitter @GeneDeLisaDev](https://img.shields.io/twitter/follow/GeneDeLisaDev.svg?style=social)](https://twitter.com/GeneDeLisaDev)
+
+
+
 Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swift.
 
 
@@ -14,15 +24,14 @@ Attaching a low level Core Audio AUGraph to an AudioToolbox MusicSequence in Swi
 
 ## SoundFont
 
-I reference a SoundFont in the code (GeneralUser GS MuseScore v1.442.sf2).
+I reference a SoundFont in the code.
 
-You can get the one I'm using from [MuseCore](https://musescore.org/en/node/36171) or
-just use any other SoundFont you like.
+You can get the one I'm using from [MuseScore](https://musescore.org/en/handbook/soundfonts).
+Or just use any other SoundFont you like.
 
 
 
 ## Bugs
-
 
 [![GitHub issues](https://img.shields.io/github/issues/genedelisa/MusicSequenceAUGraph.svg)](https://github.com/genedelisa/MusicSequenceAUGraph/issues)
 
@@ -32,12 +41,9 @@ If you find one, [please add it to issues](https://github.com/genedelisa/MusicSe
 
 ### Buy my kitty Giacomo some cat food
 
-If this project is of any use to you, my ravenous Maine Coon kitty would like a snack.
-
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=F5KE9Z29MH8YQ&bnP-DonationsBF:btn_donate_SM.gif:NonHosted)
 
-<img src="http://www.rockhoppertech.com/blog/wp-content/uploads/2015/05/IMG_0657.png" alt="Giacomo Kitty" width="400" height="300">
-
+<img src="http://www.rockhoppertech.com/blog/wp-content/uploads/2016/07/momocoding-1024.png" alt="Giacomo Kitty" width="400" height="300">
 
 ## Licensing
 

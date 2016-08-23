@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA9-7E-ERa">
-                                <rect key="frame" x="285" y="202" width="30" height="30"/>
+                                <rect key="frame" x="285" y="266" width="30" height="30"/>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -27,10 +28,13 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8P-W9-qUr">
-                                <rect key="frame" x="16" y="20" width="568" height="162"/>
+                                <rect key="frame" x="20" y="30" width="560" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="4F7-w0-Ryk"/>
+                                </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qln-zw-Aqx">
-                                <rect key="frame" x="350" y="202" width="33" height="30"/>
+                                <rect key="frame" x="350" y="266" width="32" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,7 +43,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-RT-dTj">
-                                <rect key="frame" x="14" y="279" width="572" height="31"/>
+                                <rect key="frame" x="18" y="343" width="564" height="31"/>
                                 <connections>
                                     <action selector="loopSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="C20-EN-2hK"/>
                                 </connections>
@@ -54,7 +58,7 @@
                             <constraint firstItem="l0e-RT-dTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dAn-Wo-IvL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M8P-W9-qUr" secondAttribute="trailing" id="eGc-9g-yKs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l0e-RT-dTj" secondAttribute="trailing" id="tx3-8z-A0z"/>
-                            <constraint firstItem="M8P-W9-qUr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u7y-Iu-ZNX"/>
+                            <constraint firstItem="M8P-W9-qUr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="u7y-Iu-ZNX"/>
                             <constraint firstItem="Qln-zw-Aqx" firstAttribute="leading" secondItem="bA9-7E-ERa" secondAttribute="trailing" constant="35" id="uB7-az-KJP"/>
                             <constraint firstItem="Qln-zw-Aqx" firstAttribute="top" secondItem="M8P-W9-qUr" secondAttribute="bottom" constant="20" id="xDh-YJ-kKh"/>
                         </constraints>

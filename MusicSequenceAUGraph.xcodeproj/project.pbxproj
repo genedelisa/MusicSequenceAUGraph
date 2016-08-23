@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01161BE1B149C2A005A90F7 /* Launch Screen.xib */; };
-		B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4B1BACBE4C00A25C46 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
-		B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4F1BACBF6D00A25C46 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
+		B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4B1BACBE4C00A25C46 /* .gitignore */; };
+		B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4F1BACBF6D00A25C46 /* LICENSE */; };
 		B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DB19BF58F700DCF4E3 /* AppDelegate.swift */; };
 		B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746DD19BF58F700DCF4E3 /* ViewController.swift */; };
 		B06746E119BF58F700DCF4E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06746DF19BF58F700DCF4E3 /* Main.storyboard */; };
 		B06746E319BF58F700DCF4E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06746E219BF58F700DCF4E3 /* Images.xcassets */; };
 		B06746EF19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746EE19BF58F700DCF4E3 /* MusicSequenceAUGraphTests.swift */; };
 		B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06746F819BF591200DCF4E3 /* SoundGenerator.swift */; };
-		B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0F870781BAD9A5200C38A19 /* .travis.yml */; settings = {ASSET_TAGS = (); }; };
-		B0F8707B1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */; settings = {ASSET_TAGS = (); }; };
+		B0F870791BAD9A5200C38A19 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0F870781BAD9A5200C38A19 /* .travis.yml */; };
+		B0F8707B1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
