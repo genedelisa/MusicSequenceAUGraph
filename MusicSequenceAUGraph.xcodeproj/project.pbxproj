@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D38E56C1BDE546D00BB409F /* sibeliusGMajor.mid in Resources */ = {isa = PBXBuildFile; fileRef = 5D38E56B1BDE546D00BB409F /* sibeliusGMajor.mid */; };
+		5D745C901BDE50BC00FFE40D /* confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D745C891BDE50BC00FFE40D /* confirm.swift */; };
+		5D745C911BDE50BC00FFE40D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D745C8A1BDE50BC00FFE40D /* Info.plist */; };
+		5D745C921BDE50BC00FFE40D /* MTMusicEventIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D745C8C1BDE50BC00FFE40D /* MTMusicEventIterator.swift */; };
+		5D745C931BDE50BC00FFE40D /* MTMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D745C8D1BDE50BC00FFE40D /* MTMusicPlayer.swift */; };
+		5D745C941BDE50BC00FFE40D /* MTMusicSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D745C8E1BDE50BC00FFE40D /* MTMusicSequence.swift */; };
+		5D745C951BDE50BC00FFE40D /* MTMusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D745C8F1BDE50BC00FFE40D /* MTMusicTrack.swift */; };
 		B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01161BE1B149C2A005A90F7 /* Launch Screen.xib */; };
 		B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4B1BACBE4C00A25C46 /* .gitignore */; };
 		B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B04FEC4F1BACBF6D00A25C46 /* LICENSE */; };
@@ -31,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D38E56B1BDE546D00BB409F /* sibeliusGMajor.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = sibeliusGMajor.mid; sourceTree = "<group>"; };
+		5D745C891BDE50BC00FFE40D /* confirm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirm.swift; sourceTree = "<group>"; };
+		5D745C8A1BDE50BC00FFE40D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D745C8B1BDE50BC00FFE40D /* MidiToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiToolbox.h; sourceTree = "<group>"; };
+		5D745C8C1BDE50BC00FFE40D /* MTMusicEventIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMusicEventIterator.swift; sourceTree = "<group>"; };
+		5D745C8D1BDE50BC00FFE40D /* MTMusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMusicPlayer.swift; sourceTree = "<group>"; };
+		5D745C8E1BDE50BC00FFE40D /* MTMusicSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMusicSequence.swift; sourceTree = "<group>"; };
+		5D745C8F1BDE50BC00FFE40D /* MTMusicTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTMusicTrack.swift; sourceTree = "<group>"; };
 		B01161BE1B149C2A005A90F7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		B04FEC4B1BACBE4C00A25C46 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B04FEC4F1BACBF6D00A25C46 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -67,9 +82,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D745C871BDE50BC00FFE40D /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5D745C881BDE50BC00FFE40D /* MidiToolbox */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		5D745C881BDE50BC00FFE40D /* MidiToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				5D745C891BDE50BC00FFE40D /* confirm.swift */,
+				5D745C8A1BDE50BC00FFE40D /* Info.plist */,
+				5D745C8B1BDE50BC00FFE40D /* MidiToolbox.h */,
+				5D745C8C1BDE50BC00FFE40D /* MTMusicEventIterator.swift */,
+				5D745C8D1BDE50BC00FFE40D /* MTMusicPlayer.swift */,
+				5D745C8E1BDE50BC00FFE40D /* MTMusicSequence.swift */,
+				5D745C8F1BDE50BC00FFE40D /* MTMusicTrack.swift */,
+			);
+			path = MidiToolbox;
+			sourceTree = "<group>";
+		};
 		B06746CD19BF58F700DCF4E3 = {
 			isa = PBXGroup;
 			children = (
+				5D38E56B1BDE546D00BB409F /* sibeliusGMajor.mid */,
+				5D745C871BDE50BC00FFE40D /* External */,
 				B0F8707A1BAD9DFA00C38A19 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				B0F870781BAD9A5200C38A19 /* .travis.yml */,
 				B04FEC4F1BACBF6D00A25C46 /* LICENSE */,
@@ -211,6 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D38E56C1BDE546D00BB409F /* sibeliusGMajor.mid in Resources */,
+				5D745C911BDE50BC00FFE40D /* Info.plist in Resources */,
 				B04FEC501BACBF6D00A25C46 /* LICENSE in Resources */,
 				B04FEC4C1BACBE4C00A25C46 /* .gitignore in Resources */,
 				B01161BF1B149C2A005A90F7 /* Launch Screen.xib in Resources */,
@@ -235,8 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D745C941BDE50BC00FFE40D /* MTMusicSequence.swift in Sources */,
 				B06746FA19BF591200DCF4E3 /* SoundGenerator.swift in Sources */,
+				5D745C921BDE50BC00FFE40D /* MTMusicEventIterator.swift in Sources */,
 				B06746DE19BF58F700DCF4E3 /* ViewController.swift in Sources */,
+				5D745C951BDE50BC00FFE40D /* MTMusicTrack.swift in Sources */,
+				5D745C931BDE50BC00FFE40D /* MTMusicPlayer.swift in Sources */,
+				5D745C901BDE50BC00FFE40D /* confirm.swift in Sources */,
 				B06746DC19BF58F700DCF4E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

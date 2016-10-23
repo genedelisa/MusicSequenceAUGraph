@@ -16,7 +16,7 @@ class SoundGenerator  {
     var processingGraph:AUGraph
     var samplerUnit:AudioUnit
     var musicPlayer:MusicPlayer
-    var musicSequence:MusicSequence = nil
+    var musicSequence:MusicSequence?
     
     init() {
         self.processingGraph = nil
@@ -30,16 +30,41 @@ class SoundGenerator  {
         loadSF2Preset(0)
         //or loadDLSPreset(0)
         
-        self.musicSequence = createMusicSequence()
-        self.musicPlayer = createPlayer(musicSequence)
+
+        
+        self.musicSequence = loadMIDIFile("sibeliusGMajor", ext: "mid")
+        self.musicPlayer = createPlayer(musicSequence!)
+        
+        let mSequence = MTMusicSequence(theSequence:self.musicSequence!)
+        
+        for var i:UInt32 = 0; i < mSequence.getTrackCount(); i++ {
+            print("i:",i)
+             let t =   mSequence.getTrackAtIndex(i)
+            let myIterator = MTMusicEventIterator(track:t)
+         
+            
+    
+            while (myIterator.hasCurrentEvent()) {
+                // do work here
+                myIterator.nextEvent()
+                print("event Info:",myIterator.getEventInfo())
+            }
+            
+            
+        }
+     
+        
+        
+        
+        
         
         CAShow(UnsafeMutablePointer<MusicSequence>(self.processingGraph))
-        CAShow(UnsafeMutablePointer<MusicSequence>(musicSequence))
+        CAShow(UnsafeMutablePointer<MusicSequence>(musicSequence!))
     }
     
     func getTrackLength() -> MusicTimeStamp {
         var track:MusicTrack = nil
-        let status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
+        let status = MusicSequenceGetIndTrack(musicSequence!, 0, &track)
         CheckError(status)
         return getTrackLength(track)
     }
@@ -344,6 +369,41 @@ class SoundGenerator  {
     }
     
     
+    func loadMIDIFile(filename:CFString, ext:CFString) -> MusicSequence {
+        
+        var status = OSStatus(noErr)
+        
+        var _musicSequence:MusicSequence = nil
+        status = NewMusicSequence(&_musicSequence)
+        if status != OSStatus(noErr) {
+            CheckError(status)
+            return nil
+        }
+        
+        let midiFileURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), filename, ext, nil)
+        let flags:MusicSequenceLoadFlags = MusicSequenceLoadFlags.SMF_ChannelsToTracks
+        let typeid = MusicSequenceFileTypeID.MIDIType
+        status = MusicSequenceFileLoad(_musicSequence,
+            midiFileURL,
+            typeid,
+            flags)
+        if status != OSStatus(noErr) {
+            print("\(__LINE__) bad status \(status)")
+            CheckError(status)
+            print("loading file")
+            return nil
+        }
+        
+        // if you set up an AUGraph. Otherwise it will be played with a sine wave.
+        //        status = MusicSequenceSetAUGraph(musicSequence, self.processingGraph)
+        
+        musicSequence = _musicSequence
+        
+        // debugging using C(ore) A(udio) show.
+        CAShow(UnsafeMutablePointer<MusicSequence>(_musicSequence))
+        return _musicSequence
+    }
+    
     func createMusicSequence() -> MusicSequence {
         // create the sequence
         var musicSequence:MusicSequence = nil
@@ -490,7 +550,7 @@ class SoundGenerator  {
     
     func setTrackLoopDuration(duration:Float)   {
         var track:MusicTrack = nil
-        let status = MusicSequenceGetIndTrack(musicSequence, 0, &track)
+        let status = MusicSequenceGetIndTrack(musicSequence!, 0, &track)
         CheckError(status)
         setTrackLoopDuration(track, duration: MusicTimeStamp(duration))
     }
